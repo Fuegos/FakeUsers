@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import FakeGenerator from './fakeGenerator.js'
 import ErrorCreator from './errorCreator.js'
 import regions from './data/regions.js'
@@ -7,7 +8,8 @@ import { writeToString } from '@fast-csv/format'
 
 const app = express()
 const router = express.Router()
-const __dirname = path.resolve()
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 app.use("/", router)
 app.use(express.static(path.join(__dirname, "../client", "build")))
