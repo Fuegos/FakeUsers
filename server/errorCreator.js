@@ -1,5 +1,5 @@
-const { faker } = require('@faker-js/faker')
-const { regions } = require('./data/regions')
+import { faker } from '@faker-js/faker'
+import regions from './data/regions.js'
 
 
 class ErrorCreator {
@@ -82,4 +82,4 @@ class ErrorCreator {
     }
 }
 
-module.exports = ErrorCreator
+export default ErrorCreator

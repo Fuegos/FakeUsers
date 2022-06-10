@@ -1,5 +1,5 @@
-const { faker } = require('@faker-js/faker')
-const { regions } = require('./data/regions')
+import { faker } from '@faker-js/faker'
+import regions from './data/regions.js'
 
 class FakeGenerator {
     constructor(region, numPage, seed) {
@@ -52,4 +52,4 @@ class FakeGenerator {
     }
 }
 
-module.exports = FakeGenerator
+export default FakeGenerator

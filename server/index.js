@@ -1,13 +1,13 @@
-const express = require('express')
-const path = require('path')
-const FakeGenerator = require('./fakeGenerator')
-const ErrorCreator = require('./errorCreator')
-const { regions } = require('./data/regions')
-const { writeToString } = require('@fast-csv/format')
-
+import express from 'express'
+import path from 'path'
+import FakeGenerator from './fakeGenerator.js'
+import ErrorCreator from './errorCreator.js'
+import regions from './data/regions.js'
+import { writeToString } from '@fast-csv/format'
 
 const app = express()
 const router = express.Router()
+const __dirname = path.resolve()
 
 app.use("/", router)
 app.use(express.static(path.join(__dirname, "../client", "build")))

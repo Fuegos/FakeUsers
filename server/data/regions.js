@@ -82,6 +82,4 @@ const regions = [
 ]
 
 
-module.exports = {
-    regions
-}
+export default regions
